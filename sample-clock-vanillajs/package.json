@@ -1,0 +1,12 @@
+{
+  "name": "sample-clock-vanillajs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "my-clock.js",
+  "scripts": {
+    "start": "http-server -o default.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

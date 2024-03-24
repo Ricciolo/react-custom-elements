@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script src="my-clock.js"></script>
+
+    <p>Clock</p>
+
+    <my-clock id="clock" format="localTime"></my-clock>
+
+    <p>
+        <button id="toggle">Toggle</button>
+        <button id="changeFormat">Change format</button>
+    </p>
+    <script>
+        const clock = document.getElementById('clock');
+        clock.addEventListener('change', (e) => {
+            console.log(e.detail);
+        });
+
+        document.getElementById('changeFormat').addEventListener('click', () => {
+            clock.format = clock.format === 'localTime' ? 'iso' : 'localTime';
+        });
+        document.getElementById('toggle').addEventListener('click', () => {
+            clock.toggle();
+        });
+
+    </script>
+</body>
+
+</html>
