@@ -3,7 +3,7 @@ import style from './countdown.module.css';
 
 export type CountdownProps = {
   startSeconds: number;
-  run: boolean;
+  running: boolean;
   onChange?: (seconds: number) => void;
 };
 
@@ -21,7 +21,7 @@ export default function Countdown(props: CountdownProps) {
     // Inizializzo il contatore
     setSeconds(props.startSeconds);
 
-    if (props.run) {
+    if (props.running) {
 
       // Avvio il timer
       const interval = setInterval(() => {
@@ -37,7 +37,7 @@ export default function Countdown(props: CountdownProps) {
       // Fermo il timer in caso di cambio proprietà
       return () => clearInterval(interval);
     }
-  }, [props.run, props.startSeconds]);
+  }, [props.running, props.startSeconds]);
 
   return <div className={style.text}>
     Tempo rimanente: {seconds} secondi

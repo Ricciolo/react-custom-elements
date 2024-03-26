@@ -1,6 +1,5 @@
 {
     "schemaVersion": "2.0.0",
-    "readme": "README.md",
     "modules": [
       {
         "kind": "javascript-module",
@@ -11,12 +10,61 @@
             "customElement": true,
             "name": "CountdownElement",
             "tagName": "rc-countdown",
-            "description": "This is the description of the class",
+            "description": "A countdown element which starts counting down from a given time.",
             "members": [
+              {
+                "kind": "field",
+                "name": "startSeconds",
+                "type": {
+                  "text": "number"
+                },
+                "description": "The number of seconds to start counting down from.",
+                "attribute": "start-seconds",
+                "reflects": true
+              },
+              {
+                "kind": "field",
+                "name": "running",
+                "type": {
+                  "text": "boolean"
+                },
+                "description": "Whether the countdown should run or not. If false, the countdown will pause.",
+                "attribute": "running",
+                "default": false,
+                "reflects": true               
+              },
+              {
+                "kind": "method",
+                "name": "toggle",
+                "description": "Toggles the countdown between running and paused states."
+              }
             ],
             "events": [
+              {
+                "name": "change",
+                "description": "Fires when the countdown changes.",
+                "type":{
+                  "text": "CustomEvent<{ seconds: number }>"
+                }
+              }
             ],
             "attributes": [
+              {
+                "name": "start-seconds",
+                "description": "The number of seconds to start counting down from.",
+                "type": {
+                  "text": "number"
+                },
+                "default": 10
+              },
+              {
+                "name": "running",
+                "description": "Whether the countdown should run or not. If false, the countdown will pause.",
+                "type": {
+                  "text": "boolean"
+                },
+                "default": false
+              }
             ],
             "superclass": {
               "name": "HTMLElement"
