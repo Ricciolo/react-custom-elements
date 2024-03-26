@@ -2,3 +2,4 @@ node_modules/
 countdown-react/dist/
 
 *storybook.log
+countdown-react/storybook-static/
