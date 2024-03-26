@@ -6,8 +6,6 @@ export class CountdownElement extends HTMLElement {
     public static observedAttributes = ['startseconds', 'run'];
 
     private _root: ReactDOM.Root;
-    private _childrenReplaced = false;
-    private _children: ReactNode[] = [];
     private _startSeconds?: number;
     private _run = false;
 
@@ -22,22 +20,6 @@ export class CountdownElement extends HTMLElement {
     }
 
     connectedCallback() {
-
-        var observer = new MutationObserver(s => {
-            // Ho sostiuito quindi sono i children originali
-            if (!this._childrenReplaced && s.length > 0 && s[0].removedNodes.length > 0) {
-                s[0].removedNodes.forEach(n => {
-                    this._children.push(n as any);
-                });
-                this._childrenReplaced = true;
-                this._render();
-            }
-        });
-
-        observer.observe(this, {
-            childList: true
-        });
-
         this._render();
     }
 

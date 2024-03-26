@@ -26,11 +26,14 @@
         const resetButton = document.querySelector('#resetButton');
 
         resetButton.addEventListener('click', () => {
+            // Inserisco il valore dei secondi facendo il parse in intero
             countdown.startSeconds = parseInt(seconds.value);
+            // Fermo o faccio partire il countdown
             countdown.toggle();
         });
 
         countdown.addEventListener('change', (event) => {
+            // Stampo il valore del countdown
             console.log(event.detail);
         });
     </script>
