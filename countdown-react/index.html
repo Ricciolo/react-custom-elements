@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="/src/index.ts"></script>
+    <script type="module">
+        import 'api-viewer-element';
+    </script>
+</head>
+
+<body>
+    <!-- <api-viewer src="/src/custom-elements.json"></api-viewer> -->
+
+    <rc-countdown startSeconds="5" run="false"></rc-countdown>
+
+    <input type="number" id="seconds" placeholder="Secondi" value="5">
+    <button type="button" id="resetButton">Toggle</button>
+
+    <script>
+        const countdown = document.querySelector('rc-countdown');
+        const seconds = document.querySelector('#seconds');
+        const resetButton = document.querySelector('#resetButton');
+
+        resetButton.addEventListener('click', () => {
+            countdown.startSeconds = parseInt(seconds.value);
+            countdown.toggle();
+        });
+
+        countdown.addEventListener('change', (event) => {
+            console.log(event.detail);
+        });
+    </script>
+</body>
+
+</html>

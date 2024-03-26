@@ -1,0 +1,38 @@
+{
+    "schemaVersion": "2.0.0",
+    "readme": "README.md",
+    "modules": [
+      {
+        "kind": "javascript-module",
+        "path": "./src/index.ts",
+        "declarations": [
+          {
+            "kind": "class",          
+            "customElement": true,
+            "name": "CountdownElement",
+            "tagName": "rc-countdown",
+            "description": "This is the description of the class",
+            "members": [
+            ],
+            "events": [
+            ],
+            "attributes": [
+            ],
+            "superclass": {
+              "name": "HTMLElement"
+            }
+          }
+        ],
+        "exports": [
+          {
+            "kind": "custom-element-definition",
+            "name": "rc-countdown",
+            "declaration": {
+              "name": "CountdownElement",
+              "module": "./src/index.ts"
+            }
+          }
+        ]
+      }
+    ]
+  }

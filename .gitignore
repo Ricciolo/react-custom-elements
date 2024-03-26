@@ -1,2 +1,4 @@
 node_modules/
-countdown-react/public/
+countdown-react/dist/
+
+*storybook.log
