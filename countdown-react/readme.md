@@ -5,4 +5,4 @@
 
 # Production
 - Run `npm run build` to build the project and get the production files in the `dist` folder
-- Run `build-storybook` to build the storybook project and get the production files in the `storybook-static` folder
+- Run `npm build-storybook` to build the storybook project and get the production files in the `storybook-static` folder

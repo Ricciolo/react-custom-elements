@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react';
 import Countdown, { CountdownProps } from './countdown';
 
 export class CountdownElement extends HTMLElement {
-    public static observedAttributes = ['start-seconds', 'runnning'];
+    public static observedAttributes = ['start-seconds', 'running'];
 
     private _root: ReactDOM.Root;
     private _startSeconds?: number;

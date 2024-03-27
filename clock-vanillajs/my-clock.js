@@ -7,9 +7,9 @@ class Clock extends HTMLElement {
 
     connectedCallback() {
         // Shadow DOM
-        //this._root = this.attachShadow({ mode: "open" });
+        this._root = this.attachShadow({ mode: "open" });
         // oppure
-        this._root = this;
+        //this._root = this;
 
         this._update();
         this._start();
